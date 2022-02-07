@@ -1,0 +1,160 @@
+body {
+    opacity: 1;
+    transition: 2s opacity;
+    background-color: transparent;
+    font-family: 'Roboto:400', sans-serif;
+    color: #555;
+    align-items: center;
+    align-content: center;
+    -webkit-font-smoothing: antialiased;
+    font-size: 12px;
+}
+
+a {
+    text-decoration: none;
+    color: #f2f2f2;
+    word-wrap: break-word;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.container {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    align-content: center;
+    align-items: center;
+    max-width: 90%;
+}
+
+.row {
+    background-color: transparent;
+    padding: 0;
+    text-align: center;
+    text-align: -webkit-center;
+}
+
+.iFlex {
+    display: inline-flex;
+    flex-flow: wrap;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.serverBg {
+    position: relative;
+    vertical-align: top;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 1rem;
+    box-shadow: 5px 5px 5px black;
+    margin: 1rem 1rem 1.5rem 1rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    width: 10rem;
+    height: 13rem;
+    color: #ffffff;
+}
+
+.serverCont {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    text-shadow: 1px 1px black;
+}
+
+.serverCont:hover,
+.serverCont:focus {
+    color: #ffffff;
+    text-shadow: 0 0 20px #d9ffd9;
+    text-decoration: none;
+    outline: 0;
+    font-weight: 600;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.serverImgCont {
+    -webkit-filter: drop-shadow(3px 3px 3px #222);
+    filter: drop-shadow(3px 3px 3px #222);
+}
+
+.serverImg {
+    height: 5.5rem;
+}
+
+.serverTitle {
+    display: flex;
+    flex-direction: column;
+    height: 2rem;
+    line-height: 100%;
+    margin-bottom: 10%;
+    padding-left: .4rem;
+    padding-right: .4rem;
+    vertical-align: middle;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: rgb(200, 200, 200);
+    word-break: keep-all;
+    overflow-wrap: normal;
+    transition: all .2s ease-in-out;
+}
+
+.glowOn {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    -webkit-border-radius: 23px 22px 22px 23px/23px 23px 22px 22px;
+    -moz-border-radius: 23px 22px 22px 23px/23px 23px 22px 22px;
+    border-radius: 23px 22px 22px 23px/23px 23px 22px 22px;
+    background-color: #42e846;
+    -webkit-box-shadow: 0 0.2rem 1rem rgba(66, 232, 70, .7);
+    -moz-box-shadow: 0 0.2rem 1rem rgba(66, 232, 70, .7);
+    box-shadow: 0 0.2rem 1rem rgba(66, 232, 70, .7);
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 600;
+    text-shadow: 1px 1px black;
+    text-decoration: none;
+}
+
+.glowOn:hover,
+.glowOn:focus {
+    color: #feefee;
+    text-shadow: 0 0 20px #d9ffd9;
+    text-decoration: none;
+    outline: 0;
+    font-weight: 600;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.glowOff {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    -webkit-border-radius: 23px 22px 22px 23px/23px 23px 22px 22px;
+    -moz-border-radius: 23px 22px 22px 23px/23px 23px 22px 22px;
+    border-radius: 23px 22px 22px 23px/23px 23px 22px 22px;
+    background-color: #e84242;
+    -webkit-box-shadow: 0 0.2rem 1rem rgba(232, 66, 66, .7);
+    -moz-box-shadow: 0 0.2rem 1rem rgba(232, 66, 66, .7);
+    box-shadow: 0 0.2rem 1rem rgba(232, 66, 66, .7);
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    text-shadow: 1px 1px black;
+    text-decoration: none;
+}
