@@ -73,7 +73,7 @@ foreach ($servers as $server) {
     if ($server['address'] == "") {
         $server['address'] = $server_name;
     }
-    $curl = curl_init($server['address']);
+    $curl = curl_init($server['address'] . $server['url']);
     @curl_setopt($curl, CURLOPT_PORT, $server['port']);
     @curl_setopt($curl, CURLOPT_NOBODY, true);
     @curl_setopt($curl, CURLOPT_FAILONERROR, true);
@@ -85,7 +85,7 @@ foreach ($servers as $server) {
     $response = curl_exec($curl);
     $http_code = curl_getinfo($curl, CURLINFO_RESPONSE_CODE);
 
-    if (!in_array($http_code, ['200', '301', '302', '401'], false)) {
+    if (!in_array($http_code, ['200', '301', '302', '401', '405'], false)) {
         $server_up = 'offline';
     } else {
         $server_up = 'online';
