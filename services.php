@@ -75,6 +75,7 @@ foreach ($servers as $server) {
     }
     $curl = curl_init($server['address'] . $server['url']);
     @curl_setopt($curl, CURLOPT_PORT, $server['port']);
+    @curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'GET');
     @curl_setopt($curl, CURLOPT_NOBODY, true);
     @curl_setopt($curl, CURLOPT_FAILONERROR, true);
     @curl_setopt($curl, CURLOPT_HEADER, false);
