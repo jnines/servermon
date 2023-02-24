@@ -6,7 +6,9 @@ $server_name = "https://ash.lan";
 $servers[] = array(
     "name" => "NAME to give server",
     "address" => "IP/ADDRESS if different from $server_name",
-    "port" => "PORT"
+    "port" => "PORT",
+    "url" => "endpoint URL",
+    "fa_icon" => "FontAwesome Icon"
     );
 */
 /* Icons from fontawesome.com */
@@ -53,6 +55,13 @@ $servers[] = array(
     "fa_icon" => "fas fa-list-ul"
 );
 $servers[] = array(
+    "name" => "bazarr",
+    "address" => "",
+    "port" => "",
+    "url" => "/bazarr/series",
+    "fa_icon" => "fas fa-closed-captioning"
+);
+$servers[] = array(
     "name" => "ombi",
     "address" => "",
     "port" => "",
@@ -86,12 +95,12 @@ foreach ($servers as $server) {
     $response = curl_exec($curl);
     $http_code = curl_getinfo($curl, CURLINFO_RESPONSE_CODE);
 
-    if (!in_array($http_code, ['200', '301', '302', '401', '405'], false)) {
+    if (!in_array($http_code, ['200', '301', '302'], false)) {
         $server_up = 'offline';
     } else {
         $server_up = 'online';
     }
-    $set_json[] = ["name" => "$server[name]", "address" => "$server[address]", "port" => "$server[port]", "fa_icon" => "$server[fa_icon]", "url" => "$server[url]", "status" => "$server_up"];
+    $set_json[] = ["name" => "$server[name]", "port" => "$server[port]", "fa_icon" => "$server[fa_icon]", "url" => "$server[address]"."$server[url]", "status" => "$server_up"];
     curl_close($curl);
 }
 $json = json_encode($set_json);
