@@ -1,12 +1,9 @@
 <?php
 header("Content-Type: application/json");
 /* Configure Start */
-$server_name = "https://ash.lan";
 /*
 $servers[] = array(
     "name" => "NAME to give server",
-    "address" => "IP/ADDRESS if different from $server_name",
-    "port" => "PORT",
     "url" => "endpoint URL",
     "fa_icon" => "FontAwesome Icon"
     );
@@ -14,74 +11,53 @@ $servers[] = array(
 /* Icons from fontawesome.com */
 $servers[] = array(
     "name" => "jellyFin",
-    "address" => "",
-    "port" => "",
-    "url" => "/jellyfin/web/index.html",
+    "url" => "https://ash.lan/jellyfin/web/index.html",
     "fa_icon" => "fas fa-circle-play"
 );
 $servers[] = array(
     "name" => "plex",
-    "address" => "",
-    "port" => "",
-    "url" => "/web",
+    "url" => "https://ash.lan/web",
     "fa_icon" => "fas fa-circle-play"
 );
 $servers[] = array(
     "name" => "sonarr",
-    "address" => "",
-    "port" => "",
-    "url" => "/sonarr/calendar",
+    "url" => "https://ash.lan/sonarr/calendar",
     "fa_icon" => "fas fa-tv"
 );
 $servers[] = array(
     "name" => "radarr",
-    "address" => "",
-    "port" => "",
-    "url" => "/radarr",
+    "url" => "https://ash.lan/radarr",
     "fa_icon" => "fas fa-film"
 );
 $servers[] = array(
     "name" => "lidarr",
-    "address" => "",
-    "port" => "",
-    "url" => "/lidarr",
+    "url" => "https://ash.lan/lidarr",
     "fa_icon" => "fas fa-music"
 );
 $servers[] = array(
     "name" => "prowlarr",
-    "address" => "",
-    "port" => "",
-    "url" => "/prowlarr",
+    "url" => "https://ash.lan/prowlarr",
     "fa_icon" => "fas fa-list-ul"
 );
 $servers[] = array(
     "name" => "bazarr",
-    "address" => "",
-    "port" => "",
-    "url" => "/bazarr/series",
+    "url" => "https://ash.lan/bazarr/series",
     "fa_icon" => "fas fa-closed-captioning"
 );
 $servers[] = array(
     "name" => "ombi",
-    "address" => "",
-    "port" => "",
-    "url" => "/ombi/requests-list",
+    "url" => "https://ash.lan/ombi/requests-list",
     "fa_icon" => "fas fa-magnifying-glass"
 );
 $servers[] = array(
     "name" => "transmission",
-    "address" => "",
-    "port" => "",
-    "url" => "/transmission/web/",
+    "url" => "https://ash.lan/transmission/web/",
     "fa_icon" => "fas fa-cloud-arrow-down"
 );
 
 /* Config End */
 $server_up = "";
 foreach ($servers as $server) {
-    if ($server['address'] == "") {
-        $server['address'] = $server_name;
-    }
     $curl = curl_init($server['address'] . $server['url']);
     @curl_setopt($curl, CURLOPT_PORT, $server['port']);
     @curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'GET');
@@ -100,7 +76,7 @@ foreach ($servers as $server) {
     } else {
         $server_up = 'online';
     }
-    $set_json[] = ["name" => "$server[name]", "port" => "$server[port]", "fa_icon" => "$server[fa_icon]", "url" => "$server[address]"."$server[url]", "status" => "$server_up"];
+    $set_json[] = ["name" => "$server[name]", "fa_icon" => "$server[fa_icon]", "url" => "$server[url]", "status" => "$server_up"];
     curl_close($curl);
 }
 $json = json_encode($set_json);
