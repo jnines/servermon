@@ -10,11 +10,9 @@ Config is at the top of script.
 $server_name = "https://ash.lan"; # Address to use if not specified below;  Only one instance.
 
 $servers[] = array(
-    "name" => "jellyFin", # The name you'd like to use
-    "address" => "", # URL or IP address
-    "port" => "", # Port if needed
-    "url" => "/jellyfin/web/index.html", # Path after base address above
-    "fa_icon" => "fas fa-circle-play" # FontAwesome Icon code to use
+    "name" => "jellyFin",
+    "url" => "https://ash.lan/jellyfin/web/index.html",
+    "fa_icon" => "fas fa-circle-play"
 );
 ```
 
@@ -24,10 +22,8 @@ Returns
 [
   {
     "name": "jellyFin",
-    "address": "https://ash.lan",
-    "port": "",
     "fa_icon": "fas fa-circle-play",
-    "url": "/jellyfin/web/index.html",
+    "url": "https://ash.lan/jellyfin/web/index.html",
     "status": "online"
   }
 ]
