@@ -7,8 +7,6 @@ A very (very) quickly written php script to return server/service status in JSON
 Config is at the top of script.
 
 ```php
-$server_name = "https://ash.lan"; # Address to use if not specified below;  Only one instance.
-
 $servers[] = array(
     "name" => "jellyFin",
     "url" => "https://ash.lan/jellyfin/web/index.html",
